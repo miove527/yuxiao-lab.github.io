@@ -132,7 +132,7 @@ def build(root=ROOT, output=None):
     patents = []
     for item in load('patents'):
         authors = ', '.join('<u>Yu Xiao</u>' if name == 'Yu Xiao' else esc(name) for name in item['authors'])
-        patents.append(f'<li>{authors} ({item["year"]}). {esc(item["title"])}. PCT application {esc(item["application"])}. <a href="{esc(item["url"])}">Publication {esc(item["publication"])}</a>.</li>')
+        patents.append(f'<li>{authors} ({item["year"]}). {esc(item["title"])}. PCT application {esc(item["application"])}. <a class="course-link" href="{esc(item["url"])}">Publication {esc(item["publication"])} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3 10 14"/><path d="M10 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg></a>.</li>')
     publications, years = publication_html(root)
     replacements = {'TEACHING': teaching_html(load('teaching')), 'NEWS': news_html(load('news')), 'PATENTS': '\n'.join(patents), 'PI': pi, 'PEOPLE': groups, 'GALLERY': gallery_html(load('gallery')), 'SOFTWARE': software_html(load('software')), 'PUBLICATIONS': publications, 'YEARS': ''.join(f'<option value="{year}">{year}</option>' for year in years)}
     for name in ['index', 'people', 'gallery', 'software', 'publications', 'teaching', 'research']:

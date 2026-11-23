@@ -120,7 +120,7 @@ not require an icon library. Keep public assets organized by use under
 
 Both views operate on the same generated list. Card-only fields are hidden in
 simple view through CSS; there is no second data fetch or duplicate citation list.
-Default order follows BibTeX entry order. Publication-date order uses the generated
+Default order places highlighted publications first, newest first, followed by preprints and then the remaining entries; preprints and remaining entries retain BibTeX order. Publication-date order uses the generated
 `data-published` key. Status and year filters combine rather than replacing each
 other. An invalid URL selection falls back to its default option.
 
@@ -133,7 +133,7 @@ Retain stable parameter names when modifying the controls.
 
 Highlighted papers use a pale gold border and a purple left edge. `highlight` is
 editorial data, not an automatic inference from authorship or publication date.
-Paper, Code and Data links are bold. Optional summaries share the Google Scholar
+Patent publication links use the same un-underlined external-link icon style as course resources. Paper, Code and Data links are bold. Optional summaries share the Google Scholar
 link color and have no colored background.
 
 ## Build-time student years

@@ -70,6 +70,14 @@ def render(entry):
         </li>'''
 
 
+def default_order(entries):
+    highlights = [entry for entry in entries if entry.get('highlight', '').lower() == 'true']
+    highlights.sort(key=date_key, reverse=True)
+    others = [entry for entry in entries if entry.get('highlight', '').lower() != 'true']
+    preprints = [entry for entry in others if entry.get('status', 'Preprint' if entry['ENTRYTYPE'] == 'unpublished' else 'Published').lower() == 'preprint']
+    return highlights + preprints + [entry for entry in others if entry not in preprints]
+
+
 def publication_html(root=ROOT):
     parser = bibtexparser.bparser.BibTexParser(common_strings=True)
     parser.customization = convert_to_unicode
@@ -80,7 +88,7 @@ def publication_html(root=ROOT):
     if not ids:
         raise ValueError('No BibTeX entries found')
     body = '<!-- publications:start -->\n      <ol class="publication-list">\n'
-    body += '\n'.join(render(entry) for entry in database.entries)
+    body += '\n'.join(render(entry) for entry in default_order(database.entries))
     body += '\n      </ol>\n      <!-- publications:end -->'
     years = sorted({int(entry['year']) for entry in database.entries}, reverse=True)
     return body, years

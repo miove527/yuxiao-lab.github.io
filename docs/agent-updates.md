@@ -28,6 +28,9 @@ or publication dates rather than guessed dates.
 
 ## Publications and patents
 
+Default display order: highlighted entries by publication date (newest first),
+then preprints, then other entries. The latter two groups retain BibTeX order.
+
 Append standard BibTeX entries with unique keys, `title`, `author` and `year`.
 Use `and` between authors and retain complete author lists. Verify author identity,
 title, journal, year, volume, issue, pages/article number and DOI against publisher,

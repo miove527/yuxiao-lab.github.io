@@ -581,7 +581,7 @@ a {
   overflow-wrap: anywhere;
 }
 
-.featured-publication {
+.publication-list li.featured-publication {
   border-color: #e7d9ae;
   border-left: 4px solid var(--accent);
 }
