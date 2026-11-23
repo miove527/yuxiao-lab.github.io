@@ -434,6 +434,11 @@ a {
   font-weight: 650;
 }
 
+.mentor-email a,
+.member-email a {
+  text-decoration-skip-ink: none;
+}
+
 .mentor-email a {
   color: var(--accent-dark);
   text-decoration-thickness: 2px;
