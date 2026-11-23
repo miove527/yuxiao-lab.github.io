@@ -1,0 +1,17 @@
+{
+  "limit": 2,
+  "items": [
+    {
+      "date": "2026-06-09",
+      "title": "Spatial m⁶A profiling published in Nature Methods",
+      "description": "Spatially resolved m⁶A profiling using m⁶A-ARTR-DBiT.",
+      "url": "https://doi.org/10.1038/s41592-026-03123-9"
+    },
+    {
+      "date": "2026-04-16",
+      "title": "Review published in Science China Life Sciences",
+      "description": "Methodological advances in studying protein-centered RNA–protein interactions.",
+      "url": "https://doi.org/10.1007/s11427-025-3292-4"
+    }
+  ]
+}

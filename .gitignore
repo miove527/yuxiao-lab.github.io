@@ -3,3 +3,11 @@ source_materials/
 screenshots/
 tmp_heic_tiles/
 *.zip
+
+# Local checks, caches and generated deployment files
+test/
+tests/
+__pycache__/
+*.pyc
+_site/
+.venv/

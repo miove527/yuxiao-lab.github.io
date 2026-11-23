@@ -1,0 +1,38 @@
+[
+  {
+    "caption": "Lab gathering, September 2026.",
+    "images": [
+      {
+        "src": "assets/gallery/gallery-placeholder.svg",
+        "alt": "Photo placeholder for the September 2026 lab gathering"
+      }
+    ]
+  },
+  {
+    "caption": "Lab gathering, September 2025.",
+    "images": [
+      {
+        "src": "assets/gallery/gallery-20250910-2.jpg",
+        "alt": "Lab group photo"
+      }
+    ]
+  },
+  {
+    "caption": "Lab moment, September 2025.",
+    "images": [
+      {
+        "src": "assets/gallery/gallery-20250910.jpg",
+        "alt": "Lab members together"
+      }
+    ]
+  },
+  {
+    "caption": "Sheshan outing, April 2026.",
+    "images": [
+      {
+        "src": "assets/gallery/gallery-20260411-sheshan.jpg",
+        "alt": "Group visit to Sheshan"
+      }
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Xiao Lab</title>
+  <meta name="description" content="Gallery from Xiao Lab at Fudan University.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Xiao Lab home">
+      <span>
+        <strong>Xiao Lab</strong>
+        <small>Department of Chemistry, Fudan University</small>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="primary-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="software.html">Software</a>
+      <a href="people.html">People</a>
+      <a href="teaching.html">Teaching</a>
+      <a class="active" aria-current="page" href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero gallery-intro">
+      <p class="eyebrow">Gallery</p>
+      <h1>Moments from the lab and beyond</h1>
+    </section>
+
+    <section class="section gallery-grid">
+      {{GALLERY}}
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Xiao Lab, Department of Chemistry, Fudan University</p>
+    <p>2005 Songhu Road, Yangpu District, Shanghai 200438, China</p>
+  </footer>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

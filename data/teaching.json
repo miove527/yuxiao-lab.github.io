@@ -1,0 +1,40 @@
+[
+  {
+    "id": "nucleic-acid-chemistry",
+    "published": true,
+    "title": "核酸化学",
+    "title_en": "Nucleic Acid Chemistry",
+    "code": "CHEM60043.01",
+    "credits": "2.0",
+    "level": "Graduate",
+    "description_en": "This course is an advanced specialized offering tailored for graduate students in the Department of Chemistry, focusing on the core principles of nucleic acid chemistry as well as the latest cutting-edge advances in this rapidly evolving field.\n\nThe curriculum comprehensively covers the following key areas:\n1. The fundamental principles of nucleic acid chemical structures.\n2. The principles and methodologies of both chemical and enzymatic nucleic acid synthesis.\n3. Nucleic acid assembly technologies, including in vitro assembly (employing synthetic genomic components) and in vivo assembly techniques.\n4. Core technologies in nucleic acid sequencing and gene editing, which are pivotal to modern molecular biology research.\n\nUpon successful completion of this course, students will be able to:\n• Systematically master the core principles underpinning nucleic acid synthesis technologies, laying a solid theoretical foundation for their future research.\n• Acquire in-depth insights into the latest developments in frontier application fields, with a particular focus on synthetic biology and genetic engineering.",
+    "offerings": [
+      {
+        "links": [
+          {
+            "label": "Syllabus",
+            "url": "https://fdjwgl.fudan.edu.cn/student/for-all/lesson-search/teachingSyllabusInfo/1053566"
+          }
+        ],
+        "materials": [
+          {
+            "label": "Slides",
+            "url": "https://elearning.fudan.edu.cn/"
+          },
+          {
+            "label": "Video",
+            "url": "https://icourse.fudan.edu.cn/"
+          }
+        ],
+        "year": 2026,
+        "term": "Fall",
+        "assignments": [
+          {
+            "label": "Assignment Guidelines",
+            "url": "https://elearning.fudan.edu.cn/"
+          }
+        ]
+      }
+    ]
+  }
+]

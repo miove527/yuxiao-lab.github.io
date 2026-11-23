@@ -1,0 +1,143 @@
+{
+  "pi": {
+    "name": "Yu Xiao, Ph.D.",
+    "lines": [
+      "Assistant Professor",
+      "Department of Chemistry",
+      {
+        "text": "Fudan University",
+        "url": "https://chemistry.fudan.edu.cn/0c/af/c45141a724143/page.htm"
+      },
+      "2005 Songhu Road, Yangpu District, Shanghai 200438, China"
+    ],
+    "history": [
+      {
+        "period": "2025-Present",
+        "description": "Assistant Professor, Department of Chemistry, Fudan University."
+      },
+      {
+        "period": "2019-2025",
+        "description": "Postdoctoral Researcher in Chemical Biology, The University of Chicago. Advisor: Dr. Chuan He."
+      },
+      {
+        "period": "2014-2019",
+        "description": "Ph.D. in Chemical Biology, Peking University. Advisor: Dr. Guifang Jia."
+      },
+      {
+        "period": "2010-2014",
+        "description": "B.S. in Chemistry, Shandong University."
+      }
+    ],
+    "email": "xiaoy@fudan.edu.cn",
+    "image": "assets/people/yu-xiao.jpg"
+  },
+  "groups": [
+    {
+      "name": "Current students",
+      "members": [
+        {
+          "name": "Yanan Qi",
+          "role": "Ph.D. student",
+          "image": "assets/people/qi-yanan.jpg",
+          "details": [],
+          "enrollment_year": 2025
+        },
+        {
+          "name": "Yue Tian",
+          "role": "Ph.D. student",
+          "image": "assets/people/tian-yue.jpg",
+          "details": [],
+          "enrollment_year": 2025
+        },
+        {
+          "name": "Xiang Huan",
+          "role": "Ph.D. student",
+          "image": "assets/people/huan-xiang.png",
+          "details": [],
+          "enrollment_year": 2025
+        },
+        {
+          "name": "Kun Xu",
+          "role": "Ph.D. student",
+          "image": "assets/people/xu-kun.jpg",
+          "details": [],
+          "email": "kxu@srils.ac.cn",
+          "enrollment_year": 2026
+        },
+        {
+          "name": "Hualing Yang",
+          "role": "Ph.D. student",
+          "image": "assets/people/member-placeholder.svg",
+          "details": [],
+          "email": "hlyang26@m.fudan.edu.cn",
+          "enrollment_year": 2026
+        },
+        {
+          "name": "Lan Yang",
+          "role": "Ph.D. student",
+          "image": "assets/people/member-placeholder.svg",
+          "details": [],
+          "enrollment_year": 2026
+        },
+        {
+          "name": "Wenchao Gao",
+          "role": "Master’s student",
+          "image": "assets/people/member-placeholder.svg",
+          "details": [],
+          "enrollment_year": 2027
+        }
+      ]
+    },
+    {
+      "name": "Collaboration students",
+      "members": [
+        {
+          "name": "Zhenshan Zhang",
+          "role": "Ph.D. student",
+          "image": "assets/people/zhang-zhenshan.jpg",
+          "details": [
+            "Tongji University"
+          ],
+          "email": "zzsdopamine@163.com",
+          "enrollment_year": 2025
+        },
+        {
+          "name": "Wei Gao",
+          "role": "Ph.D. student",
+          "image": "assets/people/gao-wei.jpg",
+          "details": [
+            "Tongji University"
+          ],
+          "email": "18750780110@163.com",
+          "enrollment_year": 2025
+        }
+      ]
+    },
+    {
+      "name": "Research assistants",
+      "members": [
+        {
+          "name": "Shunjiao Hu",
+          "role": "Research assistant",
+          "image": "assets/people/hu-shunjiao.jpg",
+          "details": [],
+          "email": "sjhu@srils.ac.cn"
+        },
+        {
+          "name": "Yudan Lu",
+          "role": "Research assistant",
+          "image": "assets/people/lu-yudan.jpg",
+          "details": [],
+          "email": "ydlu@srils.ac.cn"
+        },
+        {
+          "name": "Huali Tang",
+          "role": "Research assistant",
+          "image": "assets/people/tang-huali.jpg",
+          "details": [],
+          "email": "hltang@srils.ac.cn"
+        }
+      ]
+    }
+  ]
+}

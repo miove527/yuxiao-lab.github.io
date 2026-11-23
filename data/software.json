@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Spatial analysis tool",
+    "published": false,
+    "status": "Coming soon",
+    "description": "A spatial biology tool is in development. Details will be announced with the release.",
+    "logo": "",
+    "features": "Algorithms and workflows coming soon.",
+    "publication": "To be announced.",
+    "github": "Repository will be linked at release.",
+    "documentation": "Installation, quick start and tutorials coming soon.",
+    "version": "In development; no public release.",
+    "citation": "A recommended citation will accompany the release."
+  }
+]
