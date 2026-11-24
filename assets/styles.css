@@ -877,3 +877,24 @@ main { flex: 1; width: 100%; }
 
 /* Reserve the same subtitle space on Gallery without adding placeholder text. */
 .gallery-intro { padding-bottom: calc(17px + 14px + 1.62rem); }
+
+.publication-list .journal-highlight { display: block; margin-top: 12px; padding: 6px 10px; border-radius: 6px; background: #fff3ca; color: #584717; }
+.publication-list .journal-highlight a { color: inherit; }
+.gallery-open { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.gallery-dialog { width: min(960px, 95vw); height: min(820px, 94dvh); max-height: 94dvh; padding: 64px 16px 76px; border: 0; border-radius: 10px; background: var(--surface); }
+.gallery-dialog::backdrop { background: rgba(20, 20, 30, .82); }
+.gallery-dialog img { display: block; width: 100%; height: 100%; margin: auto; object-fit: contain; }
+.gallery-close { position: absolute; top: 12px; right: 16px; }
+.gallery-controls { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: grid; grid-template-columns: 40px 72px 40px; align-items: center; gap: 12px; text-align: center; }
+.gallery-dialog button { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #d8d2f0; border-radius: 50%; background: #f3f1fc; color: var(--accent-dark); font: inherit; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.gallery-dialog button:hover { background: var(--accent); color: #fff; }
+.gallery-dialog button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.gallery-dialog button[hidden] { display: none; }
+.gallery-controls span { grid-column: 2; grid-row: 1; color: var(--muted); font-size: .9rem; font-weight: 600; }
+
+.gallery-filter { display: flex; justify-content: flex-end; align-items: center; gap: 8px; padding-top: 19px; padding-bottom: 0; color: var(--accent); font-weight: 600; }
+.gallery-filter[hidden], .gallery-grid figure[hidden] { display: none; }
+.gallery-filter select { max-width: 100%; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); font: inherit; }
+
+.gallery-dialog button { padding: 0; }
+.gallery-dialog button svg { display: block; width: 20px; height: 20px; flex: none; }

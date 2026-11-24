@@ -58,3 +58,40 @@ if (publications) {
   window.addEventListener('pageshow', restoreSelections);
   restoreSelections();
 }
+
+const gallery = document.querySelector('.gallery-grid');
+if (gallery) {
+  const filter = document.querySelector('#gallery-category');
+  filter.parentElement.hidden = false;
+  filter.addEventListener('change', () => {
+    gallery.querySelectorAll('figure').forEach(figure => {
+      figure.hidden = filter.value !== 'all' && figure.dataset.category !== filter.value;
+    });
+  });
+  const dialog = document.querySelector('.gallery-dialog');
+  const photo = dialog.querySelector('img');
+  const count = dialog.querySelector('.gallery-controls span');
+  let photos = [], index = 0;
+  function showPhoto() {
+    photo.src = photos[index].href;
+    photo.alt = photos[index].dataset.alt;
+    count.textContent = `${index + 1} / ${photos.length}`;
+    dialog.querySelectorAll('.gallery-previous, .gallery-next').forEach(button => button.hidden = photos.length < 2);
+  }
+  gallery.addEventListener('click', event => {
+    const button = event.target.closest('.gallery-open');
+    if (!button) return;
+    photos = [...button.closest('figure').querySelectorAll('.gallery-photos a')];
+    index = Math.max(0, photos.findIndex(link => link.href === button.closest('figure').querySelector('img').src));
+    showPhoto();
+    dialog.showModal();
+  });
+  dialog.querySelector('.gallery-close').addEventListener('click', () => dialog.close());
+  dialog.querySelector('.gallery-previous').addEventListener('click', () => { index = (index - 1 + photos.length) % photos.length; showPhoto(); });
+  dialog.querySelector('.gallery-next').addEventListener('click', () => { index = (index + 1) % photos.length; showPhoto(); });
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') dialog.querySelector('.gallery-previous').click();
+    if (event.key === 'ArrowRight') dialog.querySelector('.gallery-next').click();
+  });
+}

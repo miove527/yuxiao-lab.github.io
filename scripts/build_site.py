@@ -60,7 +60,13 @@ def people_html(data):
 
 
 def gallery_html(events):
-    return '\n'.join('<figure>' + ''.join(image(photo['src'], photo['alt']) for photo in event['images']) + f'<figcaption>{esc(event["caption"])}</figcaption></figure>' for event in events)
+    figures = []
+    for event in sorted(events, key=lambda event: event['date'], reverse=True):
+        photos = event['images']
+        cover = next((photo for photo in photos if photo['src'] == event.get('cover')), photos[0])
+        links = ''.join(f'<a href="{esc(photo["src"])}" data-alt="{esc(photo["alt"])}">Photo</a>' for photo in photos)
+        figures.append(f'<figure data-category="{esc(event["category"])}">{image(cover["src"], cover["alt"])}<figcaption><button class="gallery-open" type="button">{esc(event["caption"])}</button></figcaption><div class="gallery-photos" hidden>{links}</div></figure>')
+    return '\n'.join(figures)
 
 
 def software_html(tools):
@@ -147,7 +153,7 @@ def build(root=ROOT, output=None):
         for name in ['.nojekyll', 'CNAME']:
             if (source / name).exists():
                 shutil.copyfile(source / name, output / name)
-        shutil.copytree(source / 'assets', output / 'assets', dirs_exist_ok=True)
+    shutil.copytree(root / 'assets', output / 'assets', dirs_exist_ok=True)
     print(f'Built seven pages in {output}')
 
 

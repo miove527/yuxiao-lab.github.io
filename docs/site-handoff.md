@@ -22,25 +22,23 @@ scripts/build_site.py Render data and assemble the publishable site
 scripts/publications.py
                       BibTeX parsing and publication markup
 scripts/check_site.py Generated-page and local-reference checks
-site/                 Generated HTML plus maintained publishable assets
-site/assets/styles.css
-                      Shared appearance and responsive behavior
-site/assets/site.js   Mobile navigation and publication controls
+assets/               Maintained images, styles and JavaScript
+assets/styles.css     Shared appearance and responsive behavior
+assets/site.js        Mobile navigation and publication controls
+site/                 Generated HTML and copied assets for local preview
 docs/                 Content guide and this implementation handoff
 .github/workflows/    PR validation and Pages deployment
 ```
 
 All seven HTML files in `site/` are generated. Edit their templates or source data,
-then rebuild. Assets inside `site/assets/` are maintained source files, not
-disposable build output: do not delete the entire `site/` directory to clean a
-build. Research is authored directly in `templates/research.html`; the other
+then rebuild. Maintain original images, styles and JavaScript under `assets/`;
+the copies in `site/assets/` are generated and ignored by Git. Research is authored directly in `templates/research.html`; the other
 templates contain tokens replaced by rendered data.
 
 Running the build without arguments updates `site/*.html`. With `--output _site`,
-it generates pages there and copies assets, `.nojekyll` and an optional `CNAME`
-from `site/`. Data, templates, scripts and docs are not published. Links such as
+it generates pages there and copies source assets plus `.nojekyll` and an optional `CNAME` from `site/`. Data, templates, scripts and docs are not published. Links such as
 `assets/people/photo.jpg` are relative to the published site root, although the
-file is stored under `site/assets/people/` in the repository. This preserves
+file is stored under `assets/people/` in the repository. This preserves
 navigation when hosted at a fork's project Pages URL.
 
 ## Page responsibilities
@@ -53,7 +51,7 @@ navigation when hosted at a fork's project Pages URL.
 | Software | Prepared tool records can be kept unpublished. Publishable cards contain tool information and resource links. |
 | People | PI profile, two-column desktop member groups and build-time academic-year labels. |
 | Teaching | Course cards, optional English descriptions and semester-specific syllabus, materials and assignment links. |
-| Gallery | Ordered activity records, two-column desktop layout and one-column mobile layout. |
+| Gallery | Date-sorted activity records with gathering/outing filtering, two-column desktop layout, one-column mobile layout and an accessible activity photo dialog. |
 
 Navigation order is Home, Research, Publications, Software, People, Teaching,
 Gallery. Navigation markup is repeated across templates; update all seven when
@@ -120,7 +118,7 @@ not require an icon library. Keep public assets organized by use under
 
 Both views operate on the same generated list. Card-only fields are hidden in
 simple view through CSS; there is no second data fetch or duplicate citation list.
-Default order places highlighted publications first, newest first, followed by preprints and then the remaining entries; preprints and remaining entries retain BibTeX order. Publication-date order uses the generated
+Default order places highlighted publications first, newest first, followed by all remaining entries in descending publication-date order. Publication-date order uses the generated
 `data-published` key. Status and year filters combine rather than replacing each
 other. An invalid URL selection falls back to its default option.
 
@@ -132,7 +130,7 @@ direct local HTML access and preserves selections when returning from a paper.
 Retain stable parameter names when modifying the controls.
 
 Highlighted papers use a pale gold border and a purple left edge. `highlight` is
-editorial data, not an automatic inference from authorship or publication date.
+editorial data, not an automatic inference from authorship or publication date. Journal highlights are separate optional linked metadata displayed in both views.
 Patent publication links use the same un-underlined external-link icon style as course resources. Paper, Code and Data links are bold. Optional summaries share the Google Scholar
 link color and have no colored background.
 
@@ -183,7 +181,7 @@ python scripts/build_site.py
 python scripts/check_site.py
 python scripts/build_site.py --output _site
 python scripts/check_site.py _site
-node --check site/assets/site.js
+node --check assets/site.js
 git diff --check
 python -m http.server 8000 --directory site
 ```

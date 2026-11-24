@@ -11,3 +11,6 @@ __pycache__/
 *.pyc
 _site/
 .venv/
+
+# Assets copied into the generated preview site
+/site/assets/

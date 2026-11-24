@@ -41,9 +41,18 @@
       <h1>Moments from the lab and beyond</h1>
     </section>
 
+    <div class="section gallery-filter" hidden>
+      <label for="gallery-category">Category</label>
+      <select id="gallery-category"><option value="all">All activities</option><option value="gathering">Gathering</option><option value="outing">Outing</option></select>
+    </div>
     <section class="section gallery-grid">
       {{GALLERY}}
     </section>
+    <dialog class="gallery-dialog" aria-label="Activity photos">
+      <button type="button" class="gallery-close" aria-label="Close photo viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <img alt="">
+      <div class="gallery-controls"><button type="button" class="gallery-previous" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button><span aria-live="polite"></span><button type="button" class="gallery-next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button></div>
+    </dialog>
   </main>
 
   <footer class="site-footer">

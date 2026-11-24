@@ -30,7 +30,7 @@ Software, Teaching and Gallery.
    invent missing contact details or publish prepared software
    records without instruction. Put new files in the matching asset directory.
 4. Run `python scripts/build_site.py`, `python scripts/check_site.py` and
-   `git diff --check`. If JavaScript changes, also run `node --check site/assets/site.js`.
+   `git diff --check`. If JavaScript changes, also run `node --check assets/site.js`.
    Inspect the source and generated-page diffs for unintended information changes.
 5. Report what changed, what was checked and any missing information. Commit,
    push, PR creation and deployment follow the user's authorization for the task.
@@ -72,7 +72,7 @@ Open [localhost:8000](http://localhost:8000). The generated HTML files in `site/
 opened directly in a browser. Python and bibtexparser are needed only to regenerate
 pages; the published website has no package or server runtime requirements.
 
-For a local update, include the changed data, any new assets and the regenerated
+For a local update, include the changed data, any new source assets and the regenerated
 HTML in the same commit. To build the deployment directory instead:
 
 ```sh
@@ -88,10 +88,8 @@ templates/                Seven page sources
 scripts/                  Build, publication rendering and reference checks
 docs/agent-updates.md      Information-update guide for AI agents
 AGENTS.md                 Agent entry point
-site/
-  *.html                  Seven generated pages
-  assets/                 backgrounds, icons, research, people, gallery,
-                          software, teaching, shared styles and JavaScript
+assets/                   Source images, shared styles and JavaScript
+site/                     Generated pages and copied assets for local preview
   .nojekyll
 .github/workflows/        Build, validation and Pages deployment
 ```

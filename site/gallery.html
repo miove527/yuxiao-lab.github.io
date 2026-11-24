@@ -41,12 +41,20 @@
       <h1>Moments from the lab and beyond</h1>
     </section>
 
+    <div class="section gallery-filter" hidden>
+      <label for="gallery-category">Category</label>
+      <select id="gallery-category"><option value="all">All activities</option><option value="gathering">Gathering</option><option value="outing">Outing</option></select>
+    </div>
     <section class="section gallery-grid">
-      <figure><img src="assets/gallery/gallery-placeholder.svg" alt="Photo placeholder for the September 2026 lab gathering" loading="lazy" decoding="async"><figcaption>Lab gathering, September 2026.</figcaption></figure>
-<figure><img src="assets/gallery/gallery-20250910-2.jpg" alt="Lab group photo" loading="lazy" decoding="async"><figcaption>Lab gathering, September 2025.</figcaption></figure>
-<figure><img src="assets/gallery/gallery-20250910.jpg" alt="Lab members together" loading="lazy" decoding="async"><figcaption>Lab moment, September 2025.</figcaption></figure>
-<figure><img src="assets/gallery/gallery-20260411-sheshan.jpg" alt="Group visit to Sheshan" loading="lazy" decoding="async"><figcaption>Sheshan outing, April 2026.</figcaption></figure>
+      <figure data-category="gathering"><img src="assets/gallery/2026-09-09/gallery-20260909-1.jpg" alt="Lab gathering in September 2026, photo 1" loading="lazy" decoding="async"><figcaption><button class="gallery-open" type="button">Lab gathering, September 2026.</button></figcaption><div class="gallery-photos" hidden><a href="assets/gallery/2026-09-09/gallery-20260909-1.jpg" data-alt="Lab gathering in September 2026, photo 1">Photo</a><a href="assets/gallery/2026-09-09/gallery-20260909-2.jpg" data-alt="Lab gathering in September 2026, photo 2">Photo</a></div></figure>
+<figure data-category="outing"><img src="assets/gallery/2026-04-11-sheshan/gallery-sheshan-20260411-1.jpg" alt="Group visit to Sheshan" loading="lazy" decoding="async"><figcaption><button class="gallery-open" type="button">Sheshan outing, April 2026.</button></figcaption><div class="gallery-photos" hidden><a href="assets/gallery/2026-04-11-sheshan/gallery-sheshan-20260411-1.jpg" data-alt="Group visit to Sheshan">Photo</a></div></figure>
+<figure data-category="gathering"><img src="assets/gallery/2025-09-10/gallery-20250910-1.jpg" alt="Lab members together" loading="lazy" decoding="async"><figcaption><button class="gallery-open" type="button">Lab gathering, September 2025.</button></figcaption><div class="gallery-photos" hidden><a href="assets/gallery/2025-09-10/gallery-20250910-1.jpg" data-alt="Lab members together">Photo</a><a href="assets/gallery/2025-09-10/gallery-20250910-2.jpg" data-alt="Lab group photo">Photo</a></div></figure>
     </section>
+    <dialog class="gallery-dialog" aria-label="Activity photos">
+      <button type="button" class="gallery-close" aria-label="Close photo viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <img alt="">
+      <div class="gallery-controls"><button type="button" class="gallery-previous" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button><span aria-live="polite"></span><button type="button" class="gallery-next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button></div>
+    </dialog>
   </main>
 
   <footer class="site-footer">

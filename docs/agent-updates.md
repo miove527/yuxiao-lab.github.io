@@ -15,8 +15,7 @@ in these files:
 | Teaching | `data/teaching.json` |
 | Gallery | `data/gallery.json` |
 
-Page sources live in `templates/`. Build results and publishable assets live in
-`site/`. Do not edit generated HTML directly. Research content is maintained in
+Page sources live in `templates/`, maintained assets in `assets/`, and build results in `site/`. Do not edit generated HTML directly. Research content is maintained in
 `templates/research.html`. Keep existing records unless removal is requested.
 
 ## News
@@ -29,7 +28,7 @@ or publication dates rather than guessed dates.
 ## Publications and patents
 
 Default display order: highlighted entries by publication date (newest first),
-then preprints, then other entries. The latter two groups retain BibTeX order.
+then all other entries by publication date (newest first).
 
 Append standard BibTeX entries with unique keys, `title`, `author` and `year`.
 Use `and` between authors and retain complete author lists. Verify author identity,
@@ -45,6 +44,7 @@ Supported standard fields include `journal`, `volume`, `number`, `pages`, `eid`,
 - `status`: Published, Preprint or Accepted. Default: Published; `@unpublished`
   defaults to Preprint.
 - `highlight`: true or false; default false. Change only when requested.
+- `journal_highlight`, `journal_highlight_journal`, `journal_highlight_url`: optional journal highlight title, journal and link; separate from `highlight`.
 - `keywords`: comma-separated tags; `summary`: optional short, supported account.
 - `code`, `data`: verified URLs; omit when unavailable.
 - `equal`, `corresponding`: names separated by `; `, matching displayed authors.
@@ -80,7 +80,7 @@ entry date, display Expected YEAR automatically. Do not manually add Year X to
 role or Expected YEAR to details. Leave enrollment_year absent when unknown;
 do not guess it. Keep graduation/departure changes under explicit user control.
 Move members between groups instead of duplicating them. Photos belong in
-`site/assets/people/`; data paths remain `assets/people/...`, relative to the site.
+`assets/people/`; data paths remain `assets/people/...`, relative to the site.
 
 ## Software
 
@@ -89,7 +89,7 @@ Each entry has `name`, boolean `published`, `status`, `description`, and optiona
 `published: false` keeps a prepared card out of the displayed page. Publish only
 on instruction. Links can use objects with `text` and `url`; ordinary values can
 be strings. Do not invent unpublished names, releases or repositories. Logos go
-in `site/assets/software/`.
+in `assets/software/`.
 
 ## Teaching
 
@@ -106,15 +106,15 @@ level as Syllabus and can be text or link objects. Example:
 {"label": "Assignment Guidelines", "url": "https://elearning.fudan.edu.cn/"}
 ```
 
-Public PPT/PPTX, PDF and handouts go in `site/assets/teaching/`; link them with
+Public PPT/PPTX, PDF and handouts go in `assets/teaching/`; link them with
 `assets/teaching/filename.pdf`. Leave empty arrays when resources are unavailable.
 Do not create empty download links or copy restricted platform materials without
 the user's authorization.
 
 ## Gallery
 
-Each record has `caption` and an `images` array. Each image has `src` and `alt`.
-Preserve record order. Files go in `site/assets/gallery/`; stored links use
+Each record has `caption`, `date` (YYYY-MM-DD), `category` (`gathering` or `outing`) and an `images` array. Activities display newest first and can be filtered by category. Each image has `src` and `alt`.
+Optional `cover` selects an image by `src`; otherwise the first image is the cover. Clicking the caption opens the activity viewer. Files go in `assets/gallery/`; stored links use
 `assets/gallery/...`. Use the supplied placeholder when photos are unavailable.
 Do not substitute photos from another event.
 
@@ -130,7 +130,7 @@ git diff --check
 python -m http.server 8000 --directory site
 ```
 
-If JavaScript changes, also run `node --check site/assets/site.js`. Inspect data
+If JavaScript changes, also run `node --check assets/site.js`. Inspect data
 and generated-page diffs for lost or unintended information. Check links and
 assets. CI builds PRs and deploys main, and regenerates student-year snapshots
 each September. It does not commit generated HTML back to the repository.
