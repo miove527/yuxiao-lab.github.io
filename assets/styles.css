@@ -893,6 +893,7 @@ main { flex: 1; width: 100%; }
 .gallery-controls span { grid-column: 2; grid-row: 1; color: var(--muted); font-size: .9rem; font-weight: 600; }
 
 .gallery-filter { display: flex; justify-content: flex-end; align-items: center; gap: 8px; padding-top: 19px; padding-bottom: 0; color: var(--accent); font-weight: 600; }
+.gallery-filter + .gallery-grid { border-top: 0; }
 .gallery-filter[hidden], .gallery-grid figure[hidden] { display: none; }
 .gallery-filter select { max-width: 100%; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); font: inherit; }
 

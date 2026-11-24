@@ -60,12 +60,16 @@ def render(entry):
     tags_html = ''.join(f'<span class="tag">{text(tag)}</span>' for tag in tags)
     summary = entry.get('summary', '')
     summary_html = f'<p class="publication-summary">{text(summary)}</p>' if summary else ''
+    highlight_html = ''
+    if entry.get('journal_highlight') and entry.get('journal_highlight_url'):
+        highlight_html = f'          <p class="journal-highlight"><strong><em>Highlighted in {text(entry.get("journal_highlight_journal", journal))}:</em> <a href="{text(entry["journal_highlight_url"])}">{text(entry["journal_highlight"])}</a></strong></p>'
     featured = ' class="featured-publication"' if entry.get('highlight', '').lower() == 'true' else ''
     return f'''        <li{featured} data-published="{date_key(entry)}" data-status="{text(status.lower())}" data-year="{text(entry['year'])}">
           <div class="publication-tags">{tags_html}</div>
           <h2 class="publication-title">{title}</h2>
           <p class="citation">{author_html(entry['author'], entry)}. <span class="citation-title">{title}. </span><strong><em>{text(journal)}</em></strong>, {text(citation)}.{doi_html}</p>
           {summary_html}
+{highlight_html}
           <div class="publication-links">{links_html}</div>
         </li>'''
 
@@ -74,8 +78,7 @@ def default_order(entries):
     highlights = [entry for entry in entries if entry.get('highlight', '').lower() == 'true']
     highlights.sort(key=date_key, reverse=True)
     others = [entry for entry in entries if entry.get('highlight', '').lower() != 'true']
-    preprints = [entry for entry in others if entry.get('status', 'Preprint' if entry['ENTRYTYPE'] == 'unpublished' else 'Published').lower() == 'preprint']
-    return highlights + preprints + [entry for entry in others if entry not in preprints]
+    return highlights + sorted(others, key=date_key, reverse=True)
 
 
 def publication_html(root=ROOT):
