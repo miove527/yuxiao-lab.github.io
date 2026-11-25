@@ -75,15 +75,16 @@
         {
           "name": "Lan Yang",
           "role": "Ph.D. student",
-          "image": "assets/people/member-placeholder.svg",
+          "image": "assets/people/yang-lan.jpg",
           "details": [],
           "enrollment_year": 2026
         },
         {
           "name": "Wenchao Gao",
           "role": "Master’s student",
-          "image": "assets/people/member-placeholder.svg",
+          "image": "assets/people/gao-wenchao.jpg",
           "details": [],
+          "email": "23301030042@m.fudan.edu.cn",
           "enrollment_year": 2027
         }
       ]
@@ -99,7 +100,7 @@
             "Tongji University"
           ],
           "email": "zzsdopamine@163.com",
-          "enrollment_year": 2025
+          "enrollment_year": 2024
         },
         {
           "name": "Wei Gao",
@@ -109,7 +110,7 @@
             "Tongji University"
           ],
           "email": "18750780110@163.com",
-          "enrollment_year": 2025
+          "enrollment_year": 2024
         }
       ]
     },
